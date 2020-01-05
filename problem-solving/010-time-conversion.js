@@ -1,31 +1,7 @@
-'use strict';
-
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(str => str.trim());
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
+// Node.js
 /*
  * Complete the timeConversion function below.
  */
-/******************** MY CODE BEGIN ********************/
 function timeConversion(s) {
     // shoot i forgot about 12
     const timeArray = s.split(":");
@@ -52,17 +28,4 @@ function timeConversion(s) {
         // Remove AM and return
         return s.slice(0, -2);
     }
-}
-/******************** MY CODE END ********************/
-
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const s = readLine();
-
-    let result = timeConversion(s);
-
-    ws.write(result + "\n");
-
-    ws.end();
 }

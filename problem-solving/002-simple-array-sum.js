@@ -1,3 +1,4 @@
+// Node.js
 /*
  * Complete the simpleArraySum function below.
  */
