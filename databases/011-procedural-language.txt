@@ -1,0 +1,4 @@
+Relational algebra
+(Again I question the usefulness of this entire section. It is unclear what
+"Query language" means, because if we're talking about database queries those
+are very much a set of procedures. We need more context.)
