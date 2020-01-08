@@ -1,20 +1,13 @@
 // Node.js
-// version 3. finally got incremented by factors instead of i++ working.
-// i thought it would immediately be faster but it's about the same.
-// you don't start seeing a performance improvement until the numbers get higher.
-// starting around getTotalX([1], [10000])
+// version 3 update.
+// no function change, just added tests to one million. got opposite performance results of what i expected. 
+// seems to be because of the loop over the allFactorArray and creating the counts object which is more 
+// costly than i thought it would be. i know it's an extra loop but i thought the fewer steps of the other 
+// loops would help. turns out i was wrong. even converting to for loop didn't help.
+// will continue pondering if there is a faster way to do that step.
+function getTotalX(a, b) {
+  console.time('step1')
 
-/*
- * Complete the 'getTotalX' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY a
- *  2. INTEGER_ARRAY b
- */
-function getTotalFactors(a, b) {
-  console.time('factorsstepx')
-  
   let allFactorArray = [];
   // Loop over each member of array a
   for (let i = 0, len = a.length; i < len; i++) {
@@ -25,13 +18,20 @@ function getTotalFactors(a, b) {
       allFactorArray.push(j)
     }
   }
+  console.timeEnd('step1')
 
+  console.time('step2')
   // Get count of each factor element
   let counts = {}
   allFactorArray.forEach(x => counts[x] = (counts[x] || 0)+1)
+  // for (let i = 0, len = allFactorArray.length; i < len; i++) {
+  //   counts[allFactorArray[i]] = (counts[allFactorArray[i]] || 0)+1
+  // }
   // Grab all factors that matched a[i] number of times, or common factors across all a[x] array elements
   const commonFactors = Object.keys(counts).filter(key => counts[key] >= a.length)
+  console.timeEnd('step2')
 
+  console.time('step3')
   // Compare array a factors against array b to see if they are also factors of b
   let finalFactors = []
   for (let i = 0, len = commonFactors.length; i < len; i++) {
@@ -45,12 +45,78 @@ function getTotalFactors(a, b) {
       finalFactors.push(commonFactors[i])
     }
   }
+  console.timeEnd('step3')
+  // console.log('finalFactors', finalFactors)
+  console.log('finalFactors.length', finalFactors.length)
   return finalFactors.length
 }
 
-getTotalX([2, 4], [16, 32, 96]);
-getTotalX([2], [20, 30, 12]);
-getTotalX([3, 4], [24, 48]);
+getTotalX([2, 4], [16, 32, 96])
+getTotalX([2], [20, 30, 12])
+getTotalX([3, 4], [24, 48])
+getTotalX([1], [100])
+getTotalX([1], [1000])
+getTotalX([1], [10000])
+getTotalX([1], [100000])
+getTotalX([1], [1000000])
+getTotalX([1], [10000000])
+
+// const start = new Date().getTime()
+// const end = new Date().getTime()
+
+
+// version 3. finally got incremented by factors instead of i++ working.
+// i thought it would immediately be faster but it's about the same.
+// you don't start seeing a performance improvement until the numbers get higher.
+// starting around getTotalX([1], [10000])
+
+/*
+ * Complete the 'getTotalX' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY a
+ *  2. INTEGER_ARRAY b
+ */
+// function getTotalFactors(a, b) {
+//   console.time('factorsstepx')
+  
+//   let allFactorArray = [];
+//   // Loop over each member of array a
+//   for (let i = 0, len = a.length; i < len; i++) {
+//     // console.log('a[i]', a[i])
+//     // Loop by a[i] size steps to get a[i] factors
+//     for (let j = a[i], len = b[0] + 1; j < len; j += a[i]) {
+//       // console.log('j', j)
+//       allFactorArray.push(j)
+//     }
+//   }
+
+//   // Get count of each factor element
+//   let counts = {}
+//   allFactorArray.forEach(x => counts[x] = (counts[x] || 0)+1)
+//   // Grab all factors that matched a[i] number of times, or common factors across all a[x] array elements
+//   const commonFactors = Object.keys(counts).filter(key => counts[key] >= a.length)
+
+//   // Compare array a factors against array b to see if they are also factors of b
+//   let finalFactors = []
+//   for (let i = 0, len = commonFactors.length; i < len; i++) {
+//     let isFactorOfB = true
+//     for (let j = 0, len = b.length; j < len; j++) {
+//       if (b[j] % commonFactors[i] != 0) {
+//         isFactorOfB = false
+//       }
+//     }
+//     if (isFactorOfB) {
+//       finalFactors.push(commonFactors[i])
+//     }
+//   }
+//   return finalFactors.length
+// }
+
+// getTotalX([2, 4], [16, 32, 96]);
+// getTotalX([2], [20, 30, 12]);
+// getTotalX([3, 4], [24, 48]);
 
 
 // version 2. working version.
