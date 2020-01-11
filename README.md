@@ -17,4 +17,5 @@
 |[Databases](https://www.hackerrank.com/domains/databases)|[Solutions](databases)|
 |[Linux Shell](https://www.hackerrank.com/domains/shell)|[Solutions](linux-shell)|
 |[Problem Solving](https://www.hackerrank.com/domains/algorithms)|[Solutions](problem-solving)|
-|[SQL](https://www.hackerrank.com/domains/sql)|[Solutions](SQL)|
+|[Problem Solving](https://www.hackerrank.com/domains/regex)|[Solutions](regex)|
+|[SQL](https://www.hackerrank.com/domains/sql)|[Solutions](sql)|
