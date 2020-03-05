@@ -1,0 +1,3 @@
+-- DB2, same for MySQL, Oracle and MS SQL Server
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY;
