@@ -31,3 +31,6 @@ function repeatedString(s, n) {
   return total
 }
 ```
+
+## Big O Time
+Not sure I'm full on at **O(1)** or somewhere in between that and **O(log n)**. **O(1)** is supposed to be a constant time regardless of the inputs but I know that larger numbers will definitely take longer to evaluate, even though it's not iterating. Feel like this is another easy 🥇.
