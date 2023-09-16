@@ -1,7 +1,7 @@
 
 # Jumping on the Clouds Solution
 
-***As always, please solve it yourself first so that you really learn the concept***
+***As always, please solve it yourself first so that you learn the concept***
 
 I decided to iterate through but not with a **for** loop at **i++** because I knew that there would be skips and I thought that iterating in the loop declaration and again inside the loop would be a ~~cluster~~ a bad idea. So I used a **while** loop and handled the iteration all in one place as one normally would do in a **while** loop.
 
@@ -24,5 +24,6 @@ function  jumpingOnClouds(c) {
   return  jumps
 }
 ```
+
 ## Big O Time
-I suppose my solution is closest to **O(log n)** because it iterates less than the array length. Although it doesn't decrease every loop it does decrease by **1** every **c[i + 2] = 0**. This is a simple problem and there really aren't that many ways to solve this. Browsing through the solutions I didn't see a better one. For once I get a 🥇 first time through.
+Not sure I'm full on at **O(1)** or somewhere in between that and **O(log n)**. **O(1)** is supposed to be a constant time regardless of the inputs but I know that larger numbers will definitely take longer to evaluate, even though it's not iterating. Feel like this is another easy 🥇.
