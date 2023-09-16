@@ -1,8 +1,9 @@
+# My Humble HackerRank Solutions
+
 <p align="center">
     <a href="https://www.hackerrank.com/chickenquest">
         <img height="154" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Hackerrank_meaningful_logo.svg">
     </a>
-    <br>My humble HackerRank solutions.
 </p>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/flapdragon/hackerrank.svg)](https://github.com/flapdragon/hackerrank/commits/master)
