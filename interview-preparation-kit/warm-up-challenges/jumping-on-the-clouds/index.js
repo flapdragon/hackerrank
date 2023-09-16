@@ -30,10 +30,25 @@
  */
 
 function jumpingOnClouds(c) {
-  console.log("Ah might as well jump. Jump!")
+  const len = c.length - 1
+  let i = 0
+  let jumps = 0
+  while (i < len) {
+    jumps++
+    if (i + 2 <= len && c[i + 2] === 0) {
+      i += 2
+    }
+    else {
+      i++
+    }
+  }
+  return jumps
 }
 
-jumpingOnClouds()
+// Tests
+console.log(jumpingOnClouds([ 0, 0, 1, 0, 0, 1, 0 ]))
+console.log(jumpingOnClouds([ 0, 0, 0, 1, 0, 0 ]))
+console.log(jumpingOnClouds([ 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 ]))
 
 // function main() {
 //     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
