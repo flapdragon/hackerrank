@@ -19,3 +19,4 @@
 |[Problem Solving](https://www.hackerrank.com/domains/algorithms)|[Solutions](problem-solving)|
 |[Regex](https://www.hackerrank.com/domains/regex)|[Solutions](regex)|
 |[SQL](https://www.hackerrank.com/domains/sql)|[Solutions](sql)|
+|[Interview Preparation Kit](https://www.hackerrank.com/interview/interview-preparation-kit)|[Solutions](interview-preparation-kit)|
